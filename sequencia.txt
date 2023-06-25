@@ -1,0 +1,143 @@
+1a. Parte: básico do Gitflow
+mkdir padroes-git-github
+cd padroes-git-github/
+ls -l
+git init
+git flow
+git flow init
+git branch
+git flow feature
+git flow feature start welcome
+git branch
+vi index.html
+ls -l
+git status
+git add .
+git commit -m "Add index"
+git log
+git flow feature finish welcome
+git flow release start 0.1.0
+git branch
+git flow feature start contact
+git branch
+ls -l
+cp index.html contact.html
+vi contact.html 
+git add .
+git commit -m "Add contact"
+git flow feature finish contact
+git log
+git checkout release/0.1.0
+git log
+vi index.html 
+git add .
+git commit -m "Add git add ."
+git status
+git log
+git branch
+git flow finish 0.1.0
+git branch
+git log
+git checkout main
+git log
+git tag
+git flow hotfix start contact
+vi index.html 
+git add .
+git commit -m 'Fix !!!!!'
+git flow finish contact
+git main
+git branch
+git tag
+
+2a. parte: Segurança no git
+Listar as chaves:
+gpg --list-secret-key --keyid-form LONG
+
+Criar a chave:
+gpg --full-generate-key
+
+gpg: revocation certificate stored as '/home/valdir/.gnupg/openpgp-revocs.d/63AFDF5545E11513DA754A9D427162EB61FBF323.rev'
+chaves pública e privada criadas e assinadas.
+
+pub   rsa4096 2023-06-25 [SC] [expires: 2024-06-24]
+      63AFDF5545E11513DA754A9D427162EB61FBF323
+uid                      Valdir Torres <valdyrtorres@yahoo.com.br>
+sub   rsa4096 2023-06-25 [E] [expires: 2024-06-24]
+
+gpg --armor --export 427162EB61FBF323
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+grdzfP2g/RrfWe5+a9XZO2I=
+=+Bek
+-----END PGP PUBLIC KEY BLOCK-----
+
+Acessar o github
+adicionar gpg-key em settings
+com o nome de Local GPG git
+
+git config --global user.signingkey 427162EB61FBF323
+
+no linux (não sei se funciona no windows)
+export GPG_TTY=$(tty)
+
+Se eu quiser assinar por padrão o commit no repositório que estou:
+git config commit.gpgsign true
+
+Se eu quiser assinar todos os commits:
+git config --global commit.gpgsign true
+
+Se eu quiser assinar todas as tags por padrão:
+git config --global tag.gpgSign true
+
+
+
+
