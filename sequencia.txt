@@ -135,8 +135,16 @@ git config commit.gpgsign true
 Se eu quiser assinar todos os commits:
 git config --global commit.gpgsign true
 
+Nota: Caso você não utilize o global e quiser assinar com a chave padrão use o -S conforme abaixo:
+git commit -S -m "First commit"
+
 Se eu quiser assinar todas as tags por padrão:
 git config --global tag.gpgSign true
+
+Como conferir se meu commit está assinado:
+git log --show-signature -1
+
+Parei faltando 3:29
 
 
 
