@@ -144,7 +144,29 @@ git config --global tag.gpgSign true
 Como conferir se meu commit está assinado:
 git log --show-signature -1
 
-Parei faltando 3:29
+Subi normalmente no github, com o repositório criado lá
+
+vi que os commits assinados estavam como "verified"
+
+vi ~/.gnupg/gpp.conf
+incluir uma linha com:
+use-agent
+
+Iniciar agent para não pedir mais a senha quando fizer um commit:
+gpgconf --launch gpg-
+
+PASSO 3 - adicionar mais um email:
+gpg --edit-key 427162EB61FBF323
+
+adduid
+coloque o ouro email
+
+uid 2
+trust
+5
+y
+
+save
 
 
 
